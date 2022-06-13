@@ -27,37 +27,26 @@ public class Numbers {
 				System.out.println("NO");
 			} else {
 
-/* 		check the odd numbers to see if they are prime
-		it is necessary to check whether the specified number 
-		is divisible by any other in the range from 1 to itself 
-		so that the fractional part was equal to 0
-*/
-				
-				flag = true;
+				/*
+				 * check the odd numbers to see if they are prime it is necessary to check
+				 * whether the specified number is divisible by any other in the range from 1 to
+				 * itself so that the fractional part was equal to 0
+				 */
 				int check = 3;
 
 				for (int step = 0; step < number; step++) {
 
-					if (check < number) {
-						if (number % check == 0) {
-							flag = false;
-							break;
-						} else {
-							check += 2;
-						}
-					} else {
+					if (check >= number) {
+						System.out.println("YES");
 						break;
+					} else if (number % check == 0) {
+						System.out.println("NO");
+						break;
+					} else {
+						check += 2;
 					}
-				}
 
-				if (!flag) {
-					System.out.println("NO");
-				} else {
-					System.out.println("YES");
 				}
-
 			}
 		}
-	}
-
-}
+	
