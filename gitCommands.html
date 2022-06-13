@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Commands</title>
+    <style>
+        h4 {
+            color: cadetblue;
+        }
+        pre {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h4>1. Git clone</h4>
+    <p>
+        Git clone is a command for downloading existing source code from a remote repository (like Github, for example). In other words, Git clone basically makes an identical copy of the latest version of a project in a repository and saves it to your computer.
+        There are a couple of ways to download the source code, but mostly I prefer the clone with https way:
+        <pre>clone 'https://name-of-the-repository-link'</pre>
+    </p>
+    
+    <h4>2. Git branch</h4>
+	<p>
+        Branches are highly important in the git world. By using branches, several developers are able to work in parallel on the same project simultaneously. We can use the git branch command for creating, listing and deleting branches.
+        Creating a new branch:
+        <pre>git branch 'branch-name'</pre>
+        This command will create a branch locally. To push the new branch into the remote repository, you need to use the following command:
+        <pre>git push -u 'remote' 'branch-name'</pre>
+	    Viewing branches:
+        <pre>git branch or git branch --list</pre>
+        Deleting a branch:
+        <pre>git branch -d 'branch-name'</pre>
+	</p>
+	
+    <h4>3. Git checkout</h4>
+	<p>
+        This is also one of the most used Git commands. To work in a branch, first you need to switch to it. We use git checkout mostly for switching from one branch to another. We can also use it for checking out files and commits.
+        <pre>git checkout 'name-of-your-branch'</pre>
+    </p>
+
+    <h4>4. Git status</h4>
+	<p>
+        The Git status command gives us all the necessary information about the current branch. 
+        <pre>git status</pre>
+    </p>
+	
+    <h4>5. Git add</h4>
+    <p>
+        When we create, modify or delete a file, these changes will happen in our local and won't be included in the next commit (unless we change the configurations).
+	    We need to use the git add command to include the changes of a file(s) into our next commit. 
+	    To add a single file:
+        <pre>git add 'file'</pre>
+        To add everything at once:
+        <pre>git add -A</pre>
+    </p>
+	
+	<h4>6. Git commit</h4>
+	<p>
+        This is maybe the most-used command of Git. Once we reach a certain point in development, we want to save our changes (maybe after a specific task or issue).
+	    Git commit is like setting a checkpoint in the development process which you can go back to later if needed.
+	    We also need to write a short message to explain what we have developed or changed in the source code.
+        <pre>git commit -m "commit message"</pre>
+        <b>Important: </b>Git commit saves your changes only locally.
+	</p>
+
+	<h4>7. Git push</h4>
+	<p>
+        After committing your changes, the next thing you want to do is send your changes to the remote server. Git push uploads your commits to the remote repository.
+        <pre>git push 'remote' 'branch-name'</pre>
+        However, if your branch is newly created, then you also need to upload the branch with the following command:
+        <pre>git push --set-upstream 'remote' 'name-of-your-branch'</pre>
+        or
+        <pre>git push -u origin 'branch_name'</pre>
+        <b>Important: </b>Git push only uploads changes that are committed.
+	</p>
+	
+    <h4>8. Git pull</h4>
+	<p>
+        The git pull command is used to get updates from the remote repo. This command is a combination of git fetch and git merge which means that, when we use git pull, it gets the updates from remote repository (git fetch) and immediately applies the latest changes in your local (git merge).
+        <pre>git pull 'remote'</pre>
+        This operation may cause conflicts that you need to solve manually.
+	</p>
+
+    <h4>9. Git revert</h4>
+	<p>
+        Sometimes we need to undo the changes that we've made. There are various ways to undo our changes locally or remotely (depends on what we need), but we must carefully use these commands to avoid unwanted deletions.
+	    Then we just need to specify the hash code next to our commit that we would like to undo:
+        <pre>git revert 3321844</pre>
+    </p>
+    
+    <h4>10. Git merge</h4>
+	<p>
+        When you've completed development in your branch and everything works fine, the final step is merging the branch with the parent branch (dev or master). This is done with the git merge command.
+        Git merge basically integrates your feature branch with all of its commits back to the dev (or master) branch. It's important to remember that you first need to be on the specific branch that you want to merge with your feature branch.
+        For example, when you want to merge your feature branch into the dev branch:
+        First you should switch to the dev branch:
+        <pre>git checkout dev</pre>
+        Before merging, you should update your local dev branch:
+        <pre>git fetch</pre>
+        Finally, you can merge your feature branch into dev:
+        <pre>git merge 'branch-name'</pre>
+    </p>
+
+</body>
+</html>
