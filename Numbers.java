@@ -4,10 +4,9 @@ public class Numbers {
 	public static void main(String[] args) {
 
 //		determine which number we will check
+//		you can set your limits by changing the values for i
 		for (int i = 1; i < 150; i++) {
 			int number = i;
-
-			boolean flag = false;
 
 			System.out.print("enter number is: " + number + " result: ");
 
