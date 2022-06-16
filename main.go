@@ -10,7 +10,10 @@ const (
 
 func main()  {
 	
-	var howMuchMoney float32 = 9*PRICE_APPLE+8*PRICE_PEAR 
+	var buyApples = 9*PRICE_APPLE
+	var buyPears = 8*PRICE_PEAR
+
+	var howMuchMoney = buyApples+buyPears
 	fmt.Println("\nHow much money do you have to spend to buy 9 apples and 8 pears? ---", howMuchMoney, "UAH")
 	
 	var howMuchPears = MY_MONEY/PRICE_PEAR
