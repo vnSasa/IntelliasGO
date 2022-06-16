@@ -15,29 +15,29 @@ func main()  {
 	amountApples := 9
 	amountPears := 8
 	
-	var buyApples = float32(amountApples)*PRICE_APPLE
-	var buyPears = float32(amountPears)*PRICE_PEAR
+	buyApples := float32(amountApples)*PRICE_APPLE
+	buyPears := float32(amountPears)*PRICE_PEAR
 
-	var howMuchMoney = buyApples+buyPears
+	howMuchMoney := buyApples+buyPears
 	fmt.Printf("\nHow much money do you have to spend to buy %x apples and %x pears?", amountApples, amountPears)
 	fmt.Println(" ---", howMuchMoney, "UAH")
 	
 // TASK 2
 
-	var howMuchPears = MY_MONEY/PRICE_PEAR
+	howMuchPears := MY_MONEY/PRICE_PEAR
 	fmt.Println("How many pears can we buy? ---", int(howMuchPears), "pears")
 
 // TASK 3
 
-	var howMuchApples = MY_MONEY/PRICE_APPLE
+	howMuchApples := MY_MONEY/PRICE_APPLE
 	fmt.Println("How many apples can we buy? ---", int(howMuchApples), "apples")
 
 // TASK 4
 
 	amountApples = 2
 	amountPears = 2
-	var ourCapabilities bool = MY_MONEY >= float32(amountApples)*PRICE_APPLE + float32(amountPears)*PRICE_PEAR
+	isOurCapabilities := MY_MONEY >= float32(amountApples)*PRICE_APPLE + float32(amountPears)*PRICE_PEAR
 	fmt.Printf("Can we buy %x pears and %x apples?", amountApples, amountPears)
-	fmt.Println(" ---", ourCapabilities, "\n")
+	fmt.Println(" ---", isOurCapabilities, "\n")
 
 }
